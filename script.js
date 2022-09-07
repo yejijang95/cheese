@@ -1,13 +1,3 @@
-/* eslint-disable no-alert */
-
-// 🐶 Your Grade: 35/49
-// Two points for each test spec.
-// One point for passing test and one for functional application.
-
-/**************
- *   SLICE 1
- **************/
-
 function updateCoffeeView(coffeeQty) {
   let coffeeCounter = document.getElementById("coffee_counter");
 
@@ -22,10 +12,6 @@ function clickCoffee(data) {
 
   return updateCoffeeView(data.coffee);
 }
-
-/**************
- *   SLICE 2
- **************/
 
 function unlockProducers(producers, coffeeCount) {
   for (let i = 0; i < producers.length; i++) {
@@ -50,7 +36,6 @@ function makeDisplayNameFromId(id) {
     .join(" ");
 }
 
-// You shouldn't need to edit this function-- its tests should pass once you've written makeDisplayNameFromId
 function makeProducerDiv(producer) {
   const containerDiv = document.createElement("div");
   containerDiv.className = "producer";
@@ -88,12 +73,7 @@ function renderProducers(data) {
       producerContainer.appendChild(makeProducerDiv(data.producers[i]));
     }
   }
-  //whoops - not sure what i could do to make this appear on the site :'(
 }
-
-/**************
- *   SLICE 3
- **************/
 
 function getProducerById(data, producerId) {
   for (let i = 0; i < data.producers.length; i++) {
@@ -157,44 +137,19 @@ function updateDOMElements(data) {
   updateCPSView(data.totalCPS);
 }
 
-/*************************
- *  Start your engines!
- *************************/
-
-// You don't need to edit any of the code below
-// But it is worth reading so you know what it does!
-
-// So far we've just defined some functions; we haven't actually
-// called any of them. Now it's time to get things moving.
-
-// We'll begin with a check to see if we're in a web browser; if we're just running this code in node for purposes of testing, we don't want to 'start the engines'.
-
-// How does this check work? Node gives us access to a global variable /// called `process`, but this variable is undefined in the browser. So,
-// we can see if we're in node by checking to see if `process` exists.
 if (typeof process === "undefined") {
-  // Get starting data from the window object
-  // (This comes from data.js)
   const data = window.data;
 
-  // Add an event listener to the giant coffee emoji
   const bigCoffee = document.getElementById("big_cheese");
   bigCoffee.addEventListener("click", () => clickCoffee(data));
 
-  // Add an event listener to the container that holds all of the producers
-  // Pass in the browser event and our data object to the event listener
   const producerContainer = document.getElementById("producer_container");
   producerContainer.addEventListener("click", (event) => {
     buyButtonClick(event, data);
   });
 
-  // Call the tick function passing in the data object once per second
   setInterval(() => tick(data), 1000);
-}
-// Meanwhile, if we aren't in a browser and are instead in node
-// we'll need to exports the code written here so we can import and
-// Don't worry if it's not clear exactly what's going on here;
-// We just need this to run the tests in Mocha.
-else if (process) {
+} else if (process) {
   module.exports = {
     updateCoffeeView,
     clickCoffee,
