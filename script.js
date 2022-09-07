@@ -1,21 +1,21 @@
-function updateCoffeeView(coffeeQty) {
-  let coffeeCounter = document.getElementById("coffee_counter");
+function updateCheeseView(cheeseQty) {
+  let cheeseCounter = document.getElementById("cheese_counter");
 
-  coffeeCounter.innerText = coffeeQty;
+  cheeseCounter.innerText = cheeseQty;
 
-  return coffeeCounter.innerText;
+  return cheeseCounter.innerText;
 }
 
-function clickCoffee(data) {
-  data.coffee++;
+function clickCheese(data) {
+  data.cheese++;
   renderProducers(data);
 
-  return updateCoffeeView(data.coffee);
+  return updateCheeseView(data.cheese);
 }
 
-function unlockProducers(producers, coffeeCount) {
+function unlockProducers(producers, cheeseCount) {
   for (let i = 0; i < producers.length; i++) {
-    if (coffeeCount >= producers[i].price / 2) {
+    if (cheeseCount >= producers[i].price / 2) {
       producers[i].unlocked = true;
     }
   }
@@ -44,12 +44,13 @@ function makeProducerDiv(producer) {
   const html = `
   <div class="producer-column">
     <div class="producer-title">${displayName}</div>
+    <div class='producer-description'>${producer.description}<div>
     <button type="button" id="buy_${producer.id}">Buy</button>
   </div>
   <div class="producer-column">
     <div>Quantity: ${producer.qty}</div>
-    <div>Coffee/second: ${producer.cps}</div>
-    <div>Cost: ${currentCost} coffee</div>
+    <div>Cheese/Second: ${producer.cps}</div>
+    <div>Cost: ${currentCost} Cheese</div>
   </div>
   `;
   containerDiv.innerHTML = html;
@@ -66,7 +67,7 @@ function renderProducers(data) {
   let producerContainer = document.getElementById("producer_container");
 
   deleteAllChildNodes(producerContainer);
-  unlockProducers(data.producers, data.coffee);
+  unlockProducers(data.producers, data.cheese);
 
   for (let i = 0; i < data.producers.length; i++) {
     if (data.producers[i].unlocked === true) {
@@ -85,7 +86,7 @@ function getProducerById(data, producerId) {
 
 function canAffordProducer(data, producerId) {
   const checkProducer = getProducerById(data, producerId);
-  return data.coffee > checkProducer.price;
+  return data.cheese > checkProducer.price;
 }
 
 function updateCPSView(cps) {
@@ -103,7 +104,7 @@ function attemptToBuyProducer(data, producerId) {
   });
   if (canAffordProducer(data, producerId)) {
     producerObj.qty++;
-    data.coffee -= producerObj.price;
+    data.cheese -= producerObj.price;
     data.totalCPS += producerObj.cps;
     producerObj.price = updatePrice(producerObj.price);
     return true;
@@ -121,27 +122,27 @@ function buyButtonClick(event, data) {
     if (canAffordProducer(data, producerId)) {
       attemptToBuyProducer(data, producerId);
       updateDOMElements(data);
-    } else window.alert("Not enough coffee!");
+    } else window.alert("Not enough cheese!");
   }
 }
 
 function tick(data) {
-  data.coffee += data.totalCPS;
-  updateCoffeeView(data.coffee);
+  data.cheese += data.totalCPS;
+  updateCheeseView(data.cheese);
   renderProducers(data);
 }
 
 function updateDOMElements(data) {
   renderProducers(data);
-  updateCoffeeView(data.coffee);
+  updateCheeseView(data.cheese);
   updateCPSView(data.totalCPS);
 }
 
 if (typeof process === "undefined") {
   const data = window.data;
 
-  const bigCoffee = document.getElementById("big_cheese");
-  bigCoffee.addEventListener("click", () => clickCoffee(data));
+  const bigCheese = document.getElementById("big_cheese");
+  bigCheese.addEventListener("click", () => clickCheese(data));
 
   const producerContainer = document.getElementById("producer_container");
   producerContainer.addEventListener("click", (event) => {
@@ -151,8 +152,8 @@ if (typeof process === "undefined") {
   setInterval(() => tick(data), 1000);
 } else if (process) {
   module.exports = {
-    updateCoffeeView,
-    clickCoffee,
+    updateCheeseView,
+    clickCheese,
     unlockProducers,
     getUnlockedProducers,
     makeDisplayNameFromId,
