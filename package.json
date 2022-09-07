@@ -1,0 +1,17 @@
+{
+  "name": "cheese",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server . -p 8000 -o -c-1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "http-server": "^0.12.3",
+    "jsdom": "^16.4.0",
+    "sinon": "^9.2.3"
+  }
+}
