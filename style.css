@@ -33,7 +33,7 @@ body {
 }
 
 .column-header {
-  font-size: 25px;
+  font-size: 30px;
   position: relative;
   background-color: white;
   top: 8px;
@@ -81,4 +81,14 @@ body {
 .producer button {
   font-size: 15px;
   width: 50px;
+}
+
+.game-name {
+  text-align: center;
+  font-size: 40px;
+}
+
+.game-description {
+  text-align: center;
+  font-size: 20px;
 }

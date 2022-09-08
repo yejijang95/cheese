@@ -45,7 +45,7 @@ window.data = {
     },
     {
       id: "cheese_farm",
-      description: "cheese",
+      description: "Nice & cozy place for the cheese farmers to live in.",
       price: 5000,
       unlocked: false,
       cps: 50,
@@ -53,7 +53,8 @@ window.data = {
     },
     {
       id: "cheese_&_wine_party",
-      description: "Nice & cozy place for the cheese farmers to live in.",
+      description:
+        "Throw a lavish party to rub elbows with potential investors.",
       price: 10000,
       unlocked: false,
       cps: 75,
