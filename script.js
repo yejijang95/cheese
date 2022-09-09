@@ -42,9 +42,14 @@ function makeProducerDiv(producer) {
   const displayName = makeDisplayNameFromId(producer.id);
   const currentCost = producer.price;
   const html = `
+  <!--FIX THIS BUG WHEN YOU GET A CHANCE!!!! W THE PIC!!!!! -->
+   <!-- <img class='producer-image' src=${producer.image}/> -->
   <div class="producer-column">
+ 
     <div class="producer-title">${displayName}</div>
+    
     <div class='producer-description'>${producer.description}<div>
+    
     <button type="button" id="buy_${producer.id}">Buy</button>
   </div>
   <div class="producer-column">
