@@ -92,3 +92,9 @@ body {
   text-align: center;
   font-size: 20px;
 }
+
+.producer-image {
+  border-radius: 8px; 
+  width: 250px;
+  height: auto;
+}

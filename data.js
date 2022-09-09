@@ -5,6 +5,7 @@ window.data = {
     {
       id: "mr._mouse",
       description: "Mr. Cheesy Mouse will steal some cheese for you.",
+      image: "images/mouse.jpeg",
       price: 10,
       unlocked: false,
       cps: 1,
@@ -13,6 +14,7 @@ window.data = {
     {
       id: "cheese_cow",
       description: "Where did you think cheese comes from?",
+      image: "images/cow.jpeg",
       price: 50,
       unlocked: false,
       cps: 2,
@@ -21,6 +23,7 @@ window.data = {
     {
       id: "cheese_goat",
       description: "Don't knock it till you try it.",
+      image: "images/goat.jpeg",
       price: 100,
       unlocked: false,
       cps: 5,
@@ -30,6 +33,7 @@ window.data = {
       id: "fondue_pot",
       description:
         "Mmmmm... You can dip anything into your delicious pot of melted cheese.",
+      image: "images/fondue.jpeg",
       price: 500,
       unlocked: false,
       cps: 10,
@@ -38,6 +42,7 @@ window.data = {
     {
       id: "giant_cheese_wheel",
       description: "Bigger than yo momma's house!",
+      image: "images/cheese-wheel.jpeg",
       price: 1000,
       unlocked: false,
       cps: 20,
@@ -46,6 +51,7 @@ window.data = {
     {
       id: "cheese_farm",
       description: "Nice & cozy place for the cheese farmers to live in.",
+      image: "images/farm.jpeg",
       price: 5000,
       unlocked: false,
       cps: 50,
@@ -55,6 +61,7 @@ window.data = {
       id: "cheese_&_wine_party",
       description:
         "Throw a lavish party to rub elbows with potential investors.",
+      image: "images/cheese-wine.webp",
       price: 10000,
       unlocked: false,
       cps: 75,
@@ -63,6 +70,7 @@ window.data = {
     {
       id: "cheese_factory",
       description: "How else will you catch up to capitalism?",
+      image: "images/factory.gif",
       price: 50000,
       unlocked: false,
       cps: 100,
@@ -71,6 +79,7 @@ window.data = {
     {
       id: "gourmet_cheese_shop",
       description: "Time to get these yuppies hooked on you delicious cheese.",
+      image: "images/cheese-shop.jpeg",
       price: 100000,
       unlocked: false,
       cps: 200,
@@ -80,6 +89,7 @@ window.data = {
       id: "cheese_castle",
       description:
         "If you don't live in a cheese castle, how else will everyone know you are the cheese king?!",
+      image: "images/castle.gif",
       price: 500000,
       unlocked: false,
       cps: 500,
@@ -88,6 +98,7 @@ window.data = {
     {
       id: "cheese_kingdom",
       description: "Yes, you are the king. All these plebs work for you!",
+      image: "images/kingdom.jpeg",
       price: 1000000,
       unlocked: false,
       cps: 1000,
@@ -96,6 +107,7 @@ window.data = {
     {
       id: "cheese_moon",
       description: "Wow, you colonized the moon!",
+      image: "images/moon.jpeg",
       price: 5000000,
       unlocked: false,
       cps: 2000,
